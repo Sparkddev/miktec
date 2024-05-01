@@ -1,5 +1,5 @@
 body{
-  background-color: #369;
+  background-color: white;
   
   height: 100vh;
 }
@@ -8,7 +8,11 @@ body{
     min-height: 50vh;
     background-color: white;
 }
-
+.contentdiv{
+    background-color: #8599AF;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
 .contenthead{
     text-align: right;
     font-weight: bolder!important;
@@ -17,6 +21,19 @@ body{
     font-size:28px;
 }
 
+.mylabel{
+    font-weight: bold;
+    color: #163F65;
+    font-size:12px;
+}
+
+.remember{
+    color:white;
+    font-size:10px;
+}
+.myform{
+    width:50%;
+}
 .mylogo{
     width:80%;
 }
